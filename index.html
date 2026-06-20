@@ -1,31 +1,412 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alejandro Rodriguez | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                  url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .cover-container {
+      max-width: 900px;
+      background: white;
+      padding: 50px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      text-align: center;
+    }
+
+    .profile-picture {
+      width: 180px;
+      height: 180px;
+      background-color: #cfe2f3;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .personal-brand {
+      display: inline-block;
+      background-color: #f4efaa;
+      padding: 10px 18px;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .bio-box {
+      background-color: #d9ead3;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .bio-box h2 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #1a5fb4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 35px;
+    }
+
+    .project-page {
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      margin-bottom: 45px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-page h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #c55a11;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .objectives {
+      background-color: #f4efaa;
+    }
+
+    .outcomes {
+      background-color: #d9ead3;
+    }
+
+    .technical {
+      background-color: #f4cccc;
+    }
+
+    .info-box h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .visual-box {
+      background-color: #cfe2f3;
+      border-radius: 10px;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .visual-box img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #222;
+      color: white;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 800px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .cover-container {
+        padding: 30px 20px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Alejandro Rodriguez</h1>
-  <p>
-    I am a graduate student in Computational and Applied Mathematics at California State University, Fullerton, with experience in computational modeling, simulation, and data analysis using MATLAB and Python. My work has included antenna design and simulation, satellite solar-power modeling, machine learning classification, financial modeling, and Markov chains
-  </p>
 
-  <p>
-    I enjoy solving problems that combine research, mathematics, and coding. I like the process of studying a topic, forming an idea, building a model or simulation, analyzing the results, and improving the approach. That workflow is what motivates me most, especially when the problem connects mathematical theory to real engineering or applied research.
-  </p>
-  <p>M.S. Mathematics student specializing in computational and applied mathematics, modeling, simulation, and data analysis.</p>
+  <!-- COVER PAGE -->
+  <header id="home">
+    <div class="cover-container">
 
-  <h2>Projects</h2>
+      <div class="profile-picture">
+        Picture<br />Optional
+      </div>
 
-  <h3>Low-SWaP-Cost Passive Slotted Waveguide Array Antenna Design & Simulation</h3>
-  <p>Master’s thesis project involving MATLAB Antenna Toolbox, waveguide antenna simulation, and aerospace applications.</p>
+      <h1>Alejandro Rodriguez</h1>
 
-  <h3>Satellite Constellation Solar Power Modeling Under Earth Occultation</h3>
-  <p>Modeled satellite solar power generation under Earth shadowing using MATLAB orbital mechanics simulation.</p>
+      <div class="personal-brand">
+        Applied Mathematics | Modeling & Simulation | Aerospace Applications
+      </div>
 
-  <h3>Hidden Markov Chain Organism Movement Research</h3>
-  <p>Developed a stochastic process framework in MATLAB to analyze long-term organism movement behavior.</p>
+      <div class="bio-box">
+        <h2>About Me</h2>
+        <p>
+          I am an M.S. Mathematics student at California State University,
+          Fullerton specializing in computational and applied mathematics.
+          My work focuses on mathematical modeling, simulation, stochastic
+          processes, numerical methods, and data analysis.
+        </p>
 
-  <h2>Contact</h2>
-  <p>Email: alejandro.rodriguez082298@gmail.com</p>
+        <p>
+          My research and project experience includes Hidden Markov Models for
+          organism movement, satellite constellation solar power modeling under
+          Earth occultation, and passive slotted waveguide array antenna
+          simulation for aerospace applications.
+        </p>
+
+        <div class="contact">
+          <p>Email: <a href="mailto:alejandro.rodriguez082298@gmail.com">alejandro.rodriguez082298@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/YOUR-USERNAME" target="_blank">github.com/YOUR-USERNAME</a></p>
+          <p>Resume: <a href="resume.pdf" target="_blank">View Resume</a></p>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#antenna">Antenna Project</a>
+    <a href="#satellite">Satellite Modeling</a>
+    <a href="#markov">Markov Chain Research</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- PROJECTS SECTION -->
+  <section>
+    <h1 class="section-title">Targeted Project Pages</h1>
+
+    <!-- PROJECT 1 -->
+    <div class="project-page" id="antenna">
+      <h2>Low-SWaP-Cost Passive Slotted Waveguide Array Antenna Design & Simulation</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Design and simulate a 12 GHz passive slotted waveguide array
+              antenna for satellite and SAR applications using MATLAB Antenna Toolbox.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Diagnosed simulation bottlenecks, identified computing limitations,
+              and developed a workaround using multi-core parallel processing and
+              an optimized coaxial probe feed.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Skills</h3>
+            <p>
+              MATLAB, MATLAB Antenna Toolbox, CAD, electromagnetic simulation,
+              antenna modeling, waveguide design, numerical simulation.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          Add antenna diagrams, MATLAB plots, simulation screenshots, or CAD images here.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-page" id="satellite">
+      <h2>Satellite Constellation Solar Power Modeling Under Earth Occultation</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Model how Earth shadowing affects solar power generation for a
+              low-orbit satellite constellation.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Simulated a 3-plane, 9-satellite constellation over 10 days and
+              found that satellites avoiding Earth’s shadow received about 13%
+              more power on average.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Skills</h3>
+            <p>
+              MATLAB, orbital mechanics, vector geometry, solar irradiance
+              modeling, umbra and penumbra modeling, tensor-based variables.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          Add orbit plots, power generation graphs, or Earth shadow diagrams here.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-page" id="markov">
+      <h2>Modeling Uni-Cellular Organism Movement Using a Hidden Markov Chain</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Develop a stochastic process framework to predict long-term,
+              multi-directional organism movement behavior.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Built a scalable Hidden Markov Model with boundary conditions and
+              generalized transition matrices for arbitrary state spaces and
+              angular variations.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Skills</h3>
+            <p>
+              MATLAB, Hidden Markov Models, stochastic processes, Markov chains,
+              spectral decomposition, eigenvalue analysis, steady-state behavior.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          Add Markov chain diagrams, transition matrix visuals, or research poster images here.
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="project-page">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:alejandro.rodriguez082298@gmail.com">alejandro.rodriguez082298@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/YOUR-USERNAME" target="_blank">github.com/YOUR-USERNAME</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">linkedin.com/in/YOUR-LINKEDIN</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alejandro Rodriguez</p>
+  </footer>
+
 </body>
 </html>
