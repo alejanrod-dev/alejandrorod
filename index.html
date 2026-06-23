@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Rodriguez | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                  url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .cover-container {
+      max-width: 900px;
+      background: white;
+      padding: 50px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      text-align: center;
+    }
+
+    .profile-picture {
+      width: min(280px, 78vw);
+      height: 340px;
+      object-fit: cover;
+      object-position: center 42%;
+      border-radius: 28px;
+      display: block;
+      margin: 0 auto 25px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      border: 6px solid #fff;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .personal-brand {
+      display: inline-block;
+      background-color: #f4efaa;
+      padding: 10px 18px;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .bio-box {
+      background-color: #d9ead3;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .bio-box h2 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #1a5fb4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 35px;
+    }
+
+    .project-page {
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      margin-bottom: 45px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-page h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #c55a11;
+    }
+
+    .project-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .objectives {
+      background-color: #f4efaa;
+    }
+
+    .outcomes {
+      background-color: #d9ead3;
+    }
+
+    .technical {
+      background-color: #f4cccc;
+    }
+
+    .info-box h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .visual-box {
+      background: linear-gradient(135deg, #eef6ff, #d8ecff);
+      border-radius: 18px;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      color: #333;
+      overflow: visible;
+    }
+
+    .visual-box img {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #222;
+      color: white;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 800px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .cover-container {
+        padding: 30px 20px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      width: 100%;
+      align-items: start;
+    }
+
+    .image-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: initial;
+      object-position: center;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      transition: none;
+    }
+
+    .image-gallery img:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Keep the first image as the largest visual while preserving its original aspect ratio. */
+    .image-gallery img:nth-child(1) {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 800px) {
+      .image-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .image-gallery img,
+      .image-gallery img:nth-child(n) {
+        grid-column: auto;
+        height: auto;
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COVER PAGE -->
+  <header id="home">
+    <div class="cover-container">
+
+      <img class="profile-picture" src="images/profile-picture.jpg" alt="Photo of Alejandro Rodriguez">
+
+      <h1>Alejandro Rodriguez</h1>
+
+      <div class="personal-brand">
+        Applied Mathematics | Modeling & Simulation |
+      </div>
+
+      <div class="bio-box">
+        <h2>About Me</h2>
+        <p>
+          I am an M.S. Mathematics student at California State University,
+          Fullerton specializing in computational and applied mathematics.
+          My work focuses on mathematical modeling, simulation, stochastic
+          processes, numerical methods, and data analysis.
+        </p>
+
+        <p>
+          My research and project experience includes Hidden Markov Models for
+          organism movement, satellite constellation solar power modeling under
+          Earth occultation, and passive slotted waveguide array antenna
+          simulation for aerospace applications.
+        </p>
+
+        <div class="contact">
+          <p>Email: <a href="mailto:alejandro.rodriguez082298@gmail.com">alejandro.rodriguez082298@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/alejanrod-dev" target="_blank">github.com/alejanrod-dev</a></p>
+          <p>Resume: <a href="res.pdf" target="_blank">View Resume</a></p>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#antenna">Antenna Project</a>
+    <a href="#satellite">Satellite Modeling</a>
+    <a href="#markov">Markov Chain Research</a>
+    <a href="#Ramsey">Ramsey Theory Research</a>
+    <a href="#Tutor">CSUSB Math Tutor</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- PROJECTS SECTION -->
+  <section>
+    <h1 class="section-title">Targeted Project Pages</h1>
+
+    <!-- PROJECT 1 -->
+    <div class="project-page" id="antenna">
+      <h2>Low-SWaP-Cost Passive Slotted Waveguide Array Antenna Design & Simulation</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Design and simulate a 12 GHz passive slotted waveguide array
+              antenna for satellite and SAR applications using MATLAB Antenna Toolbox.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Diagnosed simulation bottlenecks, identified computing limitations,
+              and developed a workaround using multi-core parallel processing and
+              an optimized coaxial probe feed.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Math Applications</h3>
+            <ul>
+              <li>Optimized beam pattern for -20dB sidelobe suppression relative to the main lobe using least-squares method in MATLAB.</li>
+              <li>Computed the physical parameters of a slotted waveguide array and constructed a 3D CAD model using a reference schematic.</li>
+              <li>Integrated a coaxial probe feed into the 3D model.</li>
+              <li>Optimized the coaxial probe feed geometry (3 DOF) for -14 dB return loss level at 12 GHz using a minimizing cost function in MATLAB.</li>
+              <li>Simulated the 3D model’s beam pattern using the MATLAB Antenna Toolbox, took a 2D slice, validated beam pattern, found a peak sidelobe distortion at -18dB.</li>
+              <li>Calculated the S-parameters of the 3D model using MATLAB Antenna Toolbox.</li>
+              <li>Analyzed S11 return loss plot to verify coaxial probe feed impedance matching, found -14 dB return loss level at 12 GHz and 75 MHz bandwidth around 12 GHz at a -14 dB return loss level</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="image-gallery">
+              <img src="images/ant-model.PNG" alt="3D CAD Model in MATLAB">
+              <img src="images/probe-opt.PNG" alt="Visual of Probe Feed Geometry">
+              <img src="images/opt-eqs.PNG" alt="Equations of Optimization Algo.">
+              <img src="images/surf-plot.png" alt="Surface Plot of Cost Function">
+              <img src="images/ant-3d.png" alt="Simulated Beampattern">
+              <img src="images/ant-gain.png" alt="Simulated Beampattern Polar Plot">
+              <img src="images/ant-presentation.jpg" alt="Me Presenting to Aerospace Corporation">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-page" id="satellite">
+      <h2>Satellite Constellation Solar Power Modeling Under Earth Occultation</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Model how Earth shadowing affects solar power generation for a
+              low-orbit satellite constellation.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Simulated a 3-plane, 9-satellite constellation over 10 days and
+              found that satellites avoiding Earth’s shadow received about 13%
+              more power on average.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Math Applications</h3>
+            <ul>
+              <li>Navigated a custom multi-body orbital mechanics simulator and worked with tensor modeled satellite constellation variables in MATLAB.</li>
+              <li>Modeled Solar irradiance as a function of distance using the inverse-square law for radiation in MATLAB.</li>
+              <li>Modeled solar panel power using: satellite location, sunlight intensity, solar panel efficiency and panel angle in MATLAB.</li>
+              <li>Calculated Earth’s shadow (umbra and penumbra) from the Sun using vector geometry and trigonometry in MATLAB.</li>
+              <li>Implemented logic algorithm to determine when a satellite is within Earth's shadow using vector geometry in MATLAB.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="image-gallery">
+              <img src="images/sats-sim.PNG" alt="Satellite Constellation">
+              <img src="images/sat-math-1.png" alt="Satellite Math Notes">
+              <img src="images/sat-tensor.PNG" alt="Satellite Tensor Model">
+              <img src="images/sat-power.png" alt="Satellite Power Output Plot">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-page" id="markov">
+      <h2>Modeling Uni-Cellular Organism Movement Using a Hidden Markov Chain</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Develop a stochastic process framework to predict long-term,
+              multi-directional organism movement behavior.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Built a scalable Hidden Markov Model with boundary conditions and
+              generalized transition matrices for arbitrary state spaces and
+              angular variations.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Math Applications</h3>
+            <ul>
+              <li>Simulated initial organism movement with a random walk using recursive equations in MATLAB.</li>
+              <li>Translated organism’s movement as state transitions using: Markov chain property, momvement direction and turn angle random variables.</li>
+              <li>Implemented boundary movement logic using realistic boundary conditions in MATLAB.</li>
+              <li>Generalized the transition matrix entires using probabilistic sum in MATLAB.</li>
+              <li>Analyzed the long-term behavior of the Markov chain using eigenvalue analysis in MATLAB.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-box">
+          <div class="image-gallery">
+              <img src="images/poster-2.PNG" alt="Academic Poster">
+              <img src="images/out-pygame.PNG" alt="Outgoing State Transitions">
+              <img src="images/in-pygame.PNG" alt="Incoming State Transitions">
+              <img src="images/me-poster-2.jpg" alt="Me presenting at CSUF reseach symposium">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-page" id="Ramsey">
+      <h2>Ramsey Theory</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Study how different labelings of integer arrays influence the number of
+              rainbow solutions to arithmetic equations. The goal was to identify
+              labeling strategies that optimize solution counts and support theoretical
+              bounds in arithmetic Ramsey theory.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Built Python programs to search large arrays, count valid solutions, and
+              analyze convergence patterns. Proved a supporting lemma for a faculty
+              research paper and presented the results at four undergraduate research
+              symposiums.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Math Applications</h3>
+            <ul>
+              <li>Built an algorithm to count the number of solutions using modular arithmetic and algebra in Python.</li>
+              <li>Built an optimization algorithm to maximize the number of solutions using algebraic logic in Python.</li>
+              <li>Tested optimization algorithm on very large array sizes, found convergence labeling.</li>
+              <li>Rigorously proved findings using modular arithmetic, discrete probability and combinatorics</li>
+              <li>Communicated findings in an academic poster at 4 undergraduate research symposiums.</li>
+              <li>Collaborated with faculty on their research paper.</li>
+              <li>Proved Lemma 2.5: fully reduced equations of the form ax + by = cz have n² solutions over modular integer sets, using number theory, combinatorics, and modular arithmetic.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-box">
+            <div class="image-gallery">
+              <img src="images/poster-1.PNG" alt="Academic Poster">
+              <img src="images/proof-1.PNG" alt="Proof of Lemma 2.5">
+              <img src="images/me-poster-1.jpg" alt="Me presenting at CSUF reseach symposium">
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-page" id="Tutor">
+      <h2>CSUSB Math Tutor</h2>
+
+      <div class="project-layout">
+
+        <div class="project-info">
+          <div class="info-box objectives">
+            <h3>Objectives</h3>
+            <p>
+              Help undergraduate students strengthen their understanding of mathematics
+              through individualized tutoring, clear conceptual explanations, and
+              guided problem-solving in courses such as Calculus, Linear Algebra,
+              Statistics, and Proofs.
+            </p>
+          </div>
+
+          <div class="info-box outcomes">
+            <h3>Outcomes & Contributions</h3>
+            <p>
+              Supported 50+ students over two years and maintained a 70% retention rate
+              by creating a welcoming learning environment, reducing math anxiety, and
+              using visual tools such as Desmos and GeoGebra to make abstract concepts
+              more concrete.
+            </p>
+          </div>
+
+          <div class="info-box technical">
+            <h3>Technical Details & Math Applications</h3>
+            <ul>
+              <li>Calculus I/II tutoring</li>
+              <li>Linear Algebra support</li>
+              <li>Statistics instruction</li>
+              <li>Proof-writing guidance</li>
+              <li>Mathematical communication</li>
+              <li>Desmos and GeoGebra visualization</li>
+              <li>Student-centered tutoring strategies</li>
+              <li>Academic confidence building</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-box">
+            <div class="image-gallery">
+              <img src="images/tutor-1.PNG" alt="Academic Poster">
+              <img src="images/tutor-2.PNG" alt="Academic Poster">
+              <img src="images/tutor-3.PNG" alt="Academic Poster">
+              <img src="images/tutor-4.PNG" alt="Academic Poster">
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="project-page">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:alejandro.rodriguez082298@gmail.com">alejandro.rodriguez082298@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/alejanrod-dev" target="_blank">github.com/alejanrod-dev</a></p>
+      <!--<p>LinkedIn: <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">linkedin.com/in/YOUR-LINKEDIN</a></p>-->
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Alejandro Rodriguez</p>
+  </footer>
+
+</body>
+</html>
